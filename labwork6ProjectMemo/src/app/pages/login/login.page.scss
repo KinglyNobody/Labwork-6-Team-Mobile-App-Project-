@@ -1,0 +1,13 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+ion-card {
+  width: 50%;
+}
+#forgot-password {
+  margin-bottom: 10%;
+  font-size: small;
+}
