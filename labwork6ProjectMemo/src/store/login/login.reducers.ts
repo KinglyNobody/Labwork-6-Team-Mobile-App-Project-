@@ -4,6 +4,7 @@ import {
   login,
   loginFail,
   loginSuccess,
+  logout,
   recoverPassword,
   recoverPasswordFail,
   recoverPasswordSuccess,
@@ -67,6 +68,10 @@ const reducer = createReducer(
       isLoggedIn: false,
       isLoggingIn: false,
     };
+  }),
+
+  on(logout, () => {
+    return initialState;
   })
 );
 
