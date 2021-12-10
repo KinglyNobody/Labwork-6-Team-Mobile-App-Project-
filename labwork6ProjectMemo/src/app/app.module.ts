@@ -16,6 +16,8 @@ import { AngularFireModule } from '@angular/fire';
 
 import { environment } from 'src/environments/environment';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [AppComponent, LoadingComponent],
   entryComponents: [],
@@ -25,6 +27,8 @@ import { environment } from 'src/environments/environment';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     ...AppStoreModule,
+    FormsModule,
+    ReactiveFormsModule,
     StoreDevtoolsModule.instrument({ maxAge: 25 }),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

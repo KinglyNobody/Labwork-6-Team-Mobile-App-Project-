@@ -7,4 +7,29 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content>
+  <div class="main-container">
+    <form [formGroup]="form">
+      <ion-item id="taskInput" class="taskInput">
+        <ion-textarea
+          type="text"
+          formControlName="task"
+          placeholder="Enter more information here..."
+        ></ion-textarea>
+
+        <ion-fab-button (click)="onSubmit()" [disabled]="!form.valid"
+          ><ion-icon name="add-outline"></ion-icon
+        ></ion-fab-button>
+      </ion-item>
+    </form>
+
+    <ion-list>
+      <ion-item *ngFor="let task of list">
+        <ion-label>{{task}}</ion-label>
+        <ion-button color="danger" (click)="onDelete(task)"
+          ><ion-icon name="trash-outline"></ion-icon
+        ></ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
